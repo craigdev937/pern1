@@ -1,8 +1,13 @@
 import express from "express";
-import { indexHome } from "../controllers/friendCon.js";
+import { CreateFriend, GetAllFriends, GetOneFriend, 
+    UpdateFriend, DeleteFriend } from "../controllers/friendCon.js";
 
 export const friendRt = express.Router();
-    friendRt.get("/", indexHome);
+    friendRt.post("/", CreateFriend);
+    friendRt.get("/", GetAllFriends);
+    friendRt.get("/:id", GetOneFriend);
+    friendRt.put("/:id", UpdateFriend);
+    friendRt.delete("/:id", DeleteFriend);
 
 
 
